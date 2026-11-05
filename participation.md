@@ -3,7 +3,7 @@ layout: page
 title: Participation
 nav_id: participation
 permalink: /participation/
-description: Registration and participation information for the Asian Workshop on Scientific Machine Learning in Fukuoka.
+description: Registration and participation information for the First Asian Workshop on Scientific Machine Learning in Fukuoka.
 ---
 
 Participation arrangements are being prepared. Registration information will be published here.

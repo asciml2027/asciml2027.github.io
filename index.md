@@ -2,7 +2,7 @@
 layout: home
 title: Home
 nav_id: home
-description: Asian Workshop on Scientific Machine Learning, planned for 26–28 April 2027 at ACROS Fukuoka, Japan.
+description: First Asian Workshop on Scientific Machine Learning, planned for 26–28 April 2027 at ACROS Fukuoka, Japan.
 ---
 
 ## About the workshop

@@ -3,7 +3,7 @@ layout: page
 title: Programme
 nav_id: programme
 permalink: /programme/
-description: Programme information for the Asian Workshop on Scientific Machine Learning, 26–28 April 2027.
+description: Programme information for the First Asian Workshop on Scientific Machine Learning, 26–28 April 2027.
 ---
 
 The workshop is planned for **{{ site.data.conference.dates_label }}**. The detailed programme, including speakers, presentation titles and session times, will be announced here.

@@ -1,7 +1,7 @@
 # Core event details. Keep quoted ISO dates as strings.
-name: Asian Workshop on Scientific Machine Learning
+name: First Asian Workshop on Scientific Machine Learning
 # A short navigation label, not an official acronym.
-short_name: Asian SciML 2027
+short_name: 1st Asian SciML 2027
 year: 2027
 dates_label: 26–28 April 2027
 start_date: "2027-04-26"
