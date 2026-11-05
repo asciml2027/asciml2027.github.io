@@ -1,0 +1,57 @@
+title: Asian Workshop on Scientific Machine Learning 2027
+description: >-
+  Asian Workshop on Scientific Machine Learning, 26–28 April 2027,
+  ACROS Fukuoka, Fukuoka, Japan.
+lang: en
+timezone: Asia/Tokyo
+
+# Set these for canonical/OG URLs and the server's 404 fallback page.
+# Ordinary page links and assets use document-relative URLs.
+# Example: url: "https://USERNAME.github.io", baseurl: "/REPOSITORY"
+url: ""
+baseurl: ""
+noindex: false
+
+# Asset directory relative to the generated site's root.
+# Examples: "assets", "./static", "static/files", "../shared/static".
+# Move/upload the files to the matching location when changing this value.
+assets_path: "./static"
+
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  auto_ids: true
+  hard_wrap: false
+  syntax_highlighter: rouge
+permalink: pretty
+strict_front_matter: true
+liquid:
+  error_mode: strict
+  strict_filters: true
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: page
+
+exclude:
+  - README.md
+  - README_JA.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - node_modules
+  - package.json
+  - package-lock.json
+  - dist
+  - preview
+  - scripts
+  - docs
+  - .bundle
+  - .openai
+  - .github
+  - _config.preview.yml
+  - THIRD_PARTY_NOTICES.md
+

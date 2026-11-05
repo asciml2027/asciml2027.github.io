@@ -1,0 +1,24 @@
+{%- comment -%}
+The path is relative to site.assets_path, itself relative to the output root.
+Ignore optional ./ and trailing / in the directory setting; keep ../ segments.
+absolute=true is used only for metadata such as og:image.
+{%- endcomment -%}
+{%- assign asset_url_directory = site.assets_path | default: 'assets' | split: '/' -%}
+{%- capture asset_url_prefix -%}
+  {%- for asset_url_segment in asset_url_directory -%}
+    {%- unless asset_url_segment == '' or asset_url_segment == '.' -%}
+      {{- asset_url_segment -}}/
+    {%- endunless -%}
+  {%- endfor -%}
+{%- endcapture -%}
+{%- assign asset_url_file = include.path | default: '' -%}
+{%- assign asset_url_first = asset_url_file | slice: 0, 1 -%}
+{%- if asset_url_first == '/' -%}
+  {%- assign asset_url_file = asset_url_file | remove_first: '/' -%}
+{%- endif -%}
+{%- assign asset_url_path = asset_url_prefix | append: asset_url_file -%}
+{%- if include.absolute -%}
+  {{- asset_url_path | absolute_url | escape -}}
+{%- else -%}
+  {%- include local-url.html path=asset_url_path -%}
+{%- endif -%}

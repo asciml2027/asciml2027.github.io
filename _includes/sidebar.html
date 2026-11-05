@@ -1,0 +1,25 @@
+<aside class="sidebar" aria-label="Workshop information">
+  <section class="sidebar-section workshop-at-a-glance">
+    <h2>Workshop information</h2>
+    <dl class="event-facts">
+      <div><dt>Dates</dt><dd>{{ site.data.conference.dates_label }}</dd></div>
+      <div><dt>Venue</dt><dd>{{ site.data.conference.venue.name }}<span>{{ site.data.conference.city }}</span></dd></div>
+    </dl>
+    <p class="small-note">Planned dates. Session times will be announced.</p>
+  </section>
+  <section class="sidebar-section">
+    <h2>For participants</h2>
+    <ul class="sidebar-links">
+      <li><a href="{% include local-url.html path='/programme/' %}">Programme information <span aria-hidden="true">→</span></a></li>
+      <li><a href="{% include local-url.html path='/participation/' %}">Registration & participation <span aria-hidden="true">→</span></a></li>
+      <li><a href="{% include local-url.html path='/venue/' %}">Venue & travel <span aria-hidden="true">→</span></a></li>
+    </ul>
+  </section>
+  {% if site.data.conference.contact_email != '' %}
+  <section class="sidebar-section">
+    <h2>Contact</h2>
+    <p><a href="mailto:{{ site.data.conference.contact_email | escape }}">{{ site.data.conference.contact_email | escape }}</a></p>
+  </section>
+  {% endif %}
+</aside>
+

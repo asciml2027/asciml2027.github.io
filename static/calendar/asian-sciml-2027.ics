@@ -1,0 +1,21 @@
+---
+layout: null
+---
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Asian SciML 2027//Workshop dates//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:{{ site.data.conference.calendar_uid }}
+DTSTAMP:{{ site.data.conference.calendar_updated_utc }}
+DTSTART;VALUE=DATE:{{ site.data.conference.start_date | remove: '-' }}
+DTEND;VALUE=DATE:{{ site.data.conference.calendar_end_exclusive | remove: '-' }}
+SUMMARY:Asian Workshop on Scientific Machine Learning
+LOCATION:ACROS Fukuoka\, Fukuoka\, Japan
+DESCRIPTION:Planned workshop dates. Programme and room to be announced.
+STATUS:TENTATIVE
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR
+

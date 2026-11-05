@@ -1,0 +1,15 @@
+<div class="table-scroll" role="region" aria-label="Planned workshop dates" tabindex="0">
+  <table class="programme-table">
+    <caption>Planned workshop dates</caption>
+    <thead><tr><th scope="col">Date</th><th scope="col">Programme</th></tr></thead>
+    <tbody>
+      {% for day in site.data.programme %}
+      <tr>
+        <th scope="row"><time datetime="{{ day.date }}">{{ day.date | date: '%-d %B %Y' }}</time><span class="table-day">{{ day.day | escape }}</span></th>
+        <td>{{ day.status | escape }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+

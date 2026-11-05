@@ -1,0 +1,14 @@
+<header class="site-header">
+  <div class="container header-inner">
+    {% assign year_label = site.data.conference.year | append: '' %}
+    <a class="site-wordmark" href="{% include local-url.html path='/' %}" aria-label="{{ site.data.conference.name | escape }} — home">{{ site.data.conference.short_name | remove: year_label | strip | escape }} <span>{{ site.data.conference.year }}</span></a>
+    <nav class="site-navigation" aria-label="Main navigation">
+      <ul>
+        {% for item in site.data.navigation %}
+        <li><a href="{% include local-url.html path=item.url %}"{% if page.nav_id == item.id %} aria-current="page"{% endif %}>{{ item.title | escape }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>
+

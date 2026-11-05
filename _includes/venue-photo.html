@@ -1,0 +1,7 @@
+<figure class="venue-photograph">
+  <img src="{{ site.data.photo.path | relative_url }}" width="{{ site.data.photo.width }}" height="{{ site.data.photo.height }}" alt="{{ site.data.photo.alt | escape }}" loading="{{ include.loading | default: 'lazy' }}" decoding="async"{% if include.loading == 'eager' %} fetchpriority="high"{% endif %}>
+  <figcaption>
+    <span class="photo-description">ACROS Fukuoka</span>
+  </figcaption>
+</figure>
+

@@ -1,0 +1,23 @@
+# Core event details. Keep quoted ISO dates as strings.
+name: Asian Workshop on Scientific Machine Learning
+# A short navigation label, not an official acronym.
+short_name: Asian SciML 2027
+year: 2027
+dates_label: 26–28 April 2027
+start_date: "2027-04-26"
+end_date: "2027-04-28"
+# iCalendar all-day events use an EXCLUSIVE end date.
+calendar_end_exclusive: "2027-04-29"
+calendar_uid: asian-sciml-2027-20270426@conference.local
+calendar_updated_utc: "20261020T055031Z"
+city: Fukuoka, Japan
+venue:
+  name: ACROS Fukuoka
+  address: 1-1-1 Tenjin, Chuo-ku, Fukuoka 810-0001, Japan
+  website: https://www.acros.or.jp/english/
+  access_url: https://www.acros.or.jp/english/access/
+contact_email: ""
+# The initial research-area descriptions are editable editorial suggestions.
+show_topics: true
+last_updated: "2026-11-02"
+

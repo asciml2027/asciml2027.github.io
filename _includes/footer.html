@@ -1,0 +1,10 @@
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>
+      <p class="footer-name">{{ site.data.conference.name }}</p>
+      <p>{{ site.data.conference.dates_label }} · {{ site.data.conference.venue.name }}, Japan</p>
+    </div>
+    <p class="updated">Last updated <time datetime="{{ site.data.conference.last_updated }}">{{ site.data.conference.last_updated | date: '%-d %B %Y' }}</time></p>
+  </div>
+</footer>
+

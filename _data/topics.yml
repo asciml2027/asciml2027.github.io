@@ -1,0 +1,9 @@
+# Editorial topic suggestions for the initial site. Adjust to the confirmed scope.
+- title: Mathematical foundations
+  description: Approximation, generalisation, stability and error analysis for scientific machine learning.
+- title: Learning for differential equations
+  description: Physics-informed methods, neural operators and data-driven models of dynamical systems.
+- title: Scientific computing and numerical analysis
+  description: Learning-assisted numerical methods and the interaction between discretisation and learning.
+- title: Inverse problems and scientific applications
+  description: Inference from observations, uncertainty quantification and applications across the sciences.

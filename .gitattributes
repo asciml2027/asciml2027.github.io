@@ -1,0 +1,3 @@
+# Preserve RFC 5545 CRLF line endings when cloning on any operating system.
+**/calendar/*.ics text eol=crlf
+

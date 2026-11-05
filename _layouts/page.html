@@ -1,0 +1,17 @@
+---
+layout: default
+---
+<div class="container">
+  <header class="page-heading">
+    <p class="page-context">{{ site.data.conference.short_name }}<span>{{ site.data.conference.dates_label }}</span></p>
+    <h1>{{ page.title | escape }}</h1>
+  </header>
+  <div class="content-columns interior-columns">
+    <article class="main-column prose">
+      {% if page.nav_id == 'venue' %}{% include venue-photo.html loading='eager' %}{% endif %}
+      {{ content }}
+    </article>
+    {% include sidebar.html %}
+  </div>
+</div>
+

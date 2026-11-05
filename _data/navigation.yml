@@ -1,0 +1,13 @@
+- title: Overview
+  url: /
+  id: home
+- title: Programme
+  url: /programme/
+  id: programme
+- title: Participation
+  url: /participation/
+  id: participation
+- title: Venue & travel
+  url: /venue/
+  id: venue
+

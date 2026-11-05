@@ -1,0 +1,37 @@
+{%- comment -%}
+Convert a site-root-relative target to a URL relative to the current document.
+Pass the original path, without baseurl. External, fragment-only and query-only
+references are preserved. A 404 fallback needs root_relative_urls: true because
+its actual request URL is unknown at build time. Output is HTML-escaped and can
+also be used as a Markdown link destination.
+{%- endcomment -%}
+{%- assign local_url_target = include.path | default: '' | strip -%}
+{%- assign local_url_first = local_url_target | slice: 0, 1 -%}
+{%- assign local_url_first_two = local_url_target | slice: 0, 2 -%}
+{%- assign local_url_scheme = local_url_target | split: '/' | first | split: '?' | first | split: '#' | first -%}
+{%- if local_url_first_two == '//' or local_url_first == '#' or local_url_first == '?' or local_url_scheme contains ':' -%}
+  {{- local_url_target | escape -}}
+{%- else -%}
+  {%- if local_url_first_two == './' -%}
+    {%- assign local_url_target = local_url_target | remove_first: './' -%}
+  {%- elsif local_url_first == '/' -%}
+    {%- assign local_url_target = local_url_target | remove_first: '/' -%}
+  {%- endif -%}
+  {%- if page.root_relative_urls -%}
+    {{- local_url_target | prepend: '/' | relative_url | escape -}}
+  {%- else -%}
+    {%- assign local_url_page = page.url | default: '/' | split: '?' | first | split: '#' | first -%}
+    {%- assign local_url_tail = local_url_page | slice: -1, 1 -%}
+    {%- if local_url_tail == '/' -%}
+      {%- assign local_url_page = local_url_page | append: 'index.html' -%}
+    {%- endif -%}
+    {%- assign local_url_parts = local_url_page | split: '/' -%}
+    {%- assign local_url_depth = local_url_parts.size | minus: 2 -%}
+    {%- capture local_url_prefix -%}
+      {%- if local_url_depth > 0 -%}
+        {%- for local_url_level in (1..local_url_depth) -%}../{%- endfor -%}
+      {%- else -%}./{%- endif -%}
+    {%- endcapture -%}
+    {{- local_url_prefix | append: local_url_target | escape -}}
+  {%- endif -%}
+{%- endif -%}

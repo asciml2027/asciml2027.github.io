@@ -1,0 +1,62 @@
+---
+layout: default
+---
+{% assign conference = site.data.conference %}
+<div class="container">
+  <section class="conference-heading" aria-labelledby="conference-title">
+    <div class="conference-heading-text">
+      <p class="conference-dates"><time datetime="{{ conference.start_date }}">{{ conference.dates_label }}</time></p>
+      <h1 id="conference-title">{{ conference.name | escape | replace: 'Machine Learning', 'Machine&nbsp;Learning' }}</h1>
+      <p class="conference-location">{{ conference.venue.name }}<span>Fukuoka, Japan</span></p>
+    </div>
+    <div class="conference-heading-image">
+      {% include venue-photo.html loading='eager' %}
+    </div>
+  </section>
+
+  <div class="content-columns">
+    <div class="main-column">
+      <article class="prose overview-copy">{{ content }}</article>
+
+      {% if conference.show_topics and site.data.topics.size > 0 %}
+      <section class="research-areas" aria-labelledby="research-heading">
+        <h2 id="research-heading">Research areas</h2>
+	Topics will include, but not limited to
+	<ul>
+	<li>ML for inverse problems</li>
+	<li>ML for differential equations</li>
+	<li>Operator learning</li>
+	<li>Neural ODEs and reconstruction of dynamics</li>
+	</ul>
+	<!-- 
+        <dl class="topics-list">
+          {% for topic in site.data.topics %}
+          <div>
+            <dt>{{ topic.title | escape }}</dt>
+            <dd>{{ topic.description | escape }}</dd>
+          </div>
+          {% endfor %}
+        </dl>
+	-->
+      </section>
+      {% endif %}
+
+      {% if site.data.announcements.size > 0 %}
+      <section class="announcements" aria-labelledby="announcements-heading">
+        <h2 id="announcements-heading">Announcements</h2>
+        <ol class="news-list">
+          {% assign news = site.data.announcements | sort: 'date' | reverse %}
+          {% for item in news %}
+          <li>
+            <time datetime="{{ item.date }}">{{ item.date | date: '%-d %B %Y' }}</time>
+            <div><h3>{{ item.title | escape }}</h3><p>{{ item.text | escape }}</p></div>
+          </li>
+          {% endfor %}
+        </ol>
+      </section>
+      {% endif %}
+    </div>
+    {% include sidebar.html home=true %}
+  </div>
+</div>
+
